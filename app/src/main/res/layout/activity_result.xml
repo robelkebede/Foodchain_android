@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.robel.foodchain.result">
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:background="#7ab800"
+        android:src="@mipmap/ic_keyboard_backspace_white_24dp"
+        fancy:backgroundTint="@color/app_green"
+        fancy:rippleColor="@color/app_green" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="227dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+         />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/date"
+        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:layout_toLeftOf="@+id/fab"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/pack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/date"
+        android:layout_alignStart="@+id/date"
+        android:layout_alignTop="@+id/date"
+        android:layout_marginTop="53dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pack"
+        android:layout_alignStart="@+id/pack"
+        android:layout_below="@+id/pack"
+        android:layout_marginTop="25dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/grower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/company"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/pack"
+        android:layout_alignStart="@+id/pack"
+        android:text=""
+        />
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/grower"
+        android:layout_alignStart="@+id/grower"
+        android:layout_below="@+id/grower"
+        android:layout_marginTop="25dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab"
+        android:layout_toEndOf="@+id/type"
+        android:layout_toRightOf="@+id/type"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pack"
+        android:layout_alignStart="@+id/pack"
+        android:layout_alignBottom="@+id/fab"
+        android:text="" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fancy:srcCompat="@drawable/logo_big"
+        android:layout_marginBottom="51dp"
+        android:layout_above="@+id/date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/mess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pack"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pack"
+        android:layout_centerHorizontal="true" />
+
+
+</android.widget.RelativeLayout>
