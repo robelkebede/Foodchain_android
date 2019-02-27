@@ -57,7 +57,7 @@ public class result extends AppCompatActivity  {
         final TextView date = (TextView) findViewById(R.id.date);
         final TextView grower = (TextView) findViewById(R.id.grower);
         final TextView type = (TextView) findViewById(R.id.type);
-        final TextView owner = (TextView) findViewById(R.id.owner);
+        //final TextView owner = (TextView) findViewById(R.id.owner);
         final TextView message = (TextView) findViewById(R.id.mess);
         final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar);
        // textView.setText(value);
@@ -120,7 +120,8 @@ public class result extends AppCompatActivity  {
                         // results.setText(post.getDate().toString());
                     }
                 }catch(Exception e){
-                    Log.d(TAG,"ERROR");
+                    //Log.d(TAG,"ERROR");
+                    Log.d(TAG,e.toString());
                 }
 
 

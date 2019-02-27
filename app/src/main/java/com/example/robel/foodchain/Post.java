@@ -29,8 +29,7 @@ public class Post extends JSONObject {
     @SerializedName("res")
     private String res;
 
-    @SerializedName("owner")
-    private String owner;
+
 
 
 
@@ -52,9 +51,7 @@ public class Post extends JSONObject {
     public String getDate(){
         return date;
     }
-    public String getOwner(){
-        return owner;
-    }
+
 
 
 }
