@@ -52,6 +52,4 @@ public class Post extends JSONObject {
         return date;
     }
 
-
-
 }

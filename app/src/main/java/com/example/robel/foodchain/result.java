@@ -48,6 +48,19 @@ public class result extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+
+        final GPSTracker gpsTracker = new GPSTracker(this,this);
+        final double lat;
+        final double lng;
+
+        if(gpsTracker.canGetLocation()){
+            lat=gpsTracker.getLatitude();
+            lng=gpsTracker.getLongitude();
+        }else{
+            lat = 0.0;
+            lng = 0.0;
+        }
+
         Intent intent = getIntent();
         String value = intent.getStringExtra("id");
         final TextView results = (TextView) findViewById(R.id.status);
@@ -116,6 +129,8 @@ public class result extends AppCompatActivity  {
                        // owner.setText("Owner: "+post.getOwner().toString());
                         Log.d(TAG,"this is the owners id");
 
+                        CreatePost(lat,lng,post.getDate().toString(),post.getType().toString(),post.getCompany().toString(),post.getGrower().toString());
+
 
                         // results.setText(post.getDate().toString());
                     }
@@ -149,6 +164,36 @@ public class result extends AppCompatActivity  {
             public void onClick(View view) {
                 finish();
 
+            }
+        });
+
+
+
+    }
+    private void CreatePost(double lat,double lng,String timestamp,String item,String company,String grower){
+        PostData post = new PostData(lat,lng,timestamp,item,company,grower);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        Json json = retrofit.create(Json.class);
+
+        Call<PostData> call = json.createpost(post);
+
+        call.enqueue(new Callback<PostData>() {
+            @Override
+            public void onResponse(Call<PostData> call, Response<PostData> response) {
+                if(!response.isSuccessful()){
+                    Log.d(TAG,response.message());
+                    return;
+                }
+                Log.d(TAG,String.valueOf(response.code()));
+            }
+
+            @Override
+            public void onFailure(Call<PostData> call, Throwable t) {
+                    Log.d(TAG,t.getMessage());
             }
         });
 
